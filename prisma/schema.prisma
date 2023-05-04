@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model locationDay {
+  id                        Int    @id @default(autoincrement())
+  countryName               String
+  cityName                  String
+  month                     Int
+  day                       Int
+  temperature_2m_max        Int
+  temperature_2m_min        Int
+  temperature_2m_mean       Int
+  apparent_temperature_max  Int
+  apparent_temperature_min  Int
+  apparent_temperature_mean Int
+  sunrise                   Int
+  sunset                    Int
+  precipitation_sum         Int
+  rain_sum                  Int
+  snowfall_sum              Int
+  precipitation_hours       Int
+  windspeed_10m_max         Int
+  windgusts_10m_max         Int
+}
